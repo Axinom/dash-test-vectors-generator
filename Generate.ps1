@@ -5,8 +5,9 @@ $inputRoot = "D:\tmp\tv"
 $outputRoot = "D:\tmp\out"
 
 $makemedia = Join-Path $PSScriptRoot "Makemedia.exe"
+$glue = Join-Path $PSScriptRoot "Glue.exe"
 
-$optimize = "Speed"
+$optimize = "Balance"
 # Separate by strings, not spaces, because Windows process argument passing is very innovative and needs it.
 $standardParameters = @("--h264", "--h265", "--optimize", $optimize, "--debug-overlay")
 
@@ -138,3 +139,29 @@ $caminadesRoot = Join-Path $inputRoot "CaminadesLlamigos"
     --aspectratio "16:9" `
     $standardParameters `
     --output (Join-Path $outputRoot "Period10")
+
+# Merge them all!
+
+& $glue --input (Join-Path $outputRoot "Period01/Clear") `
+    --input (Join-Path $outputRoot "Period02/Clear") `
+    --input (Join-Path $outputRoot "Period03/Clear") `
+    --input (Join-Path $outputRoot "Period04/Clear") `
+    --input (Join-Path $outputRoot "Period05/Clear") `
+    --input (Join-Path $outputRoot "Period06/Clear") `
+    --input (Join-Path $outputRoot "Period07/Clear") `
+    --input (Join-Path $outputRoot "Period08/Clear") `
+    --input (Join-Path $outputRoot "Period09/Clear") `
+    --input (Join-Path $outputRoot "Period10/Clear") `
+    --output (Join-Path $outputRoot "Final/Clear")
+
+& $glue --input (Join-Path $outputRoot "Period01/Encrypted") `
+    --input (Join-Path $outputRoot "Period02/Encrypted") `
+    --input (Join-Path $outputRoot "Period03/Encrypted") `
+    --input (Join-Path $outputRoot "Period04/Encrypted") `
+    --input (Join-Path $outputRoot "Period05/Encrypted") `
+    --input (Join-Path $outputRoot "Period06/Encrypted") `
+    --input (Join-Path $outputRoot "Period07/Encrypted") `
+    --input (Join-Path $outputRoot "Period08/Encrypted") `
+    --input (Join-Path $outputRoot "Period09/Encrypted") `
+    --input (Join-Path $outputRoot "Period10/Encrypted") `
+    --output (Join-Path $outputRoot "Final/Encrypted")
