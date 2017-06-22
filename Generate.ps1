@@ -28,6 +28,8 @@ $standardParameters = @("--h264", "--h265", "--optimize", $optimize, "--debug-ov
 # We add one music track to every period with its own language code, to enable one to check whether a player can keep
 # following the same language across many periods with different contents.
 #
+# We add some random subtitles to various periods just to have some text present and observe player selection behavior.
+#
 # We preserve aspect ratio but use the GPMF quality levels, adjusting width to match aspect ratio.
 
 # Language code zxx - no linguistic content
@@ -44,6 +46,7 @@ $tosRoot = Join-Path $inputRoot "tos"
     --language en --input (Join-Path $tosRoot "TOS-en.srt") `
     --language es --input (Join-Path $tosRoot "TOS-es.srt") `
     --language nl-NL --input (Join-Path $tosRoot "TOS-nl.srt") `
+    --language x-complex --input (Join-Path $inputRoot "Complex.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period01.xml") `
     --aspectratio "9:4" `
     $standardParameters `
@@ -76,6 +79,7 @@ $firesRoot = Join-Path $inputRoot "FiresBeneathWater"
 & $makemedia --language en --input (Join-Path $inputRoot "life.mp4") `
     --language x-dance --input (Join-Path $inputRoot "bensound-dance-loop.mp3") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
+    --language nl-NL --input (Join-Path $tosRoot "TOS-nl.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period04.xml") `
     --aspectratio "16:9" `
     $standardParameters `
@@ -96,6 +100,8 @@ $caminadesRoot = Join-Path $inputRoot "CaminadesLlamigos"
 & $makemedia --language en --input (Join-Path $inputRoot "west_wind_easy_1080p.y4m") `
     --language x-soul --input (Join-Path $inputRoot "bensound-retrosoul-loop.mp3") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
+    --language nl-NL --input (Join-Path $tosRoot "TOS-nl.srt") `
+    --language zh-cmn --input (Join-Path $tosRoot "TOS-zh.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period06.xml") `
     --aspectratio "16:9" `
     $standardParameters `
@@ -115,6 +121,7 @@ $caminadesRoot = Join-Path $inputRoot "CaminadesLlamigos"
     --language x-funny --input (Join-Path $inputRoot "bensound-funnysong-loop.mp3") `
     --language x-badass --input (Join-Path $inputRoot "bensound-badass-loop.mp3") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
+    --language zh-cmn --input (Join-Path $tosRoot "TOS-zh.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period08.xml") `
     --aspectratio "16:9" `
     $standardParameters `
@@ -125,6 +132,8 @@ $caminadesRoot = Join-Path $inputRoot "CaminadesLlamigos"
     --language x-groovy --input (Join-Path $inputRoot "bensound-groovyhiphop-loop.mp3") `
     --language x-badass --input (Join-Path $inputRoot "bensound-badass-loop.mp3") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
+    --language nl-NL --input (Join-Path $tosRoot "TOS-nl.srt") `
+    --language zh-cmn --input (Join-Path $tosRoot "TOS-zh.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period09.xml") `
     --aspectratio "16:10" `
     $standardParameters `
@@ -135,6 +144,8 @@ $caminadesRoot = Join-Path $inputRoot "CaminadesLlamigos"
     --language x-sexy --input (Join-Path $inputRoot "bensound-sexy-loop.mp3") `
     --language x-badass --input (Join-Path $inputRoot "bensound-badass-loop.mp3") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
+    --language zh-cmn --input (Join-Path $tosRoot "TOS-zh.srt") `
+    --language nl-NL --input (Join-Path $tosRoot "TOS-nl.srt") `
     --cpix (Join-Path $inputRoot "Axinom-v8-MultiContent-Period10.xml") `
     --aspectratio "16:9" `
     $standardParameters `
