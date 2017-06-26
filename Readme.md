@@ -1,6 +1,6 @@
 # v8 test vectors generator
 
-This repository contains a PowerShell scripts for generating the [Axinom v8 DASH test vectors](https://github.com/Axinom/dash-test-vectors).
+This repository contains PowerShell scripts for generating the [Axinom v8 DASH test vectors](https://github.com/Axinom/dash-test-vectors).
 
 You must separately provide:
 
