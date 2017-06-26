@@ -11,7 +11,7 @@ $optimize = "Balance"
 # Separate by strings, not spaces, because Windows process argument passing is very innovative and needs it.
 $standardParameters = @("--h264", "--h265", "--optimize", $optimize, "--debug-overlay")
 
-# v8-MultiPeriod-MultiContent: different aspect ratios and languages in different periods.
+# v8-MultiContent: different aspect ratios and languages in different periods.
 # Video inputs are:
 # 01) (12min) Tears of Steel 3840x1714 9:4 24 fps, 3 audio, 5 text
 # 02) (30sec, 25fps reduced, 4:3 crop) park_joy + ducks_take_off + crowd_run 3840x2160 16:9 25 fps, 0 audio, 0 text
