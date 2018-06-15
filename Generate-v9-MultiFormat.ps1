@@ -22,6 +22,5 @@ $keysPath = Join-Path $inputRoot "v9-MultiFormat.xml"
     --language en-x-low --input (Join-Path $tosRoot "audio_low.wav") `
     --language x-popmusic --input (Join-Path $inputRoot "bensound-popdance-loop.mp3") `
     --cpix $keysPath `
-    --aspectratio "9:4" `
     $standardParameters `
     --output (Join-Path $outputRoot "v9-MultiFormat")
