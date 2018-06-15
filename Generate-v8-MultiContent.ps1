@@ -8,7 +8,6 @@ $makemedia = Join-Path $PSScriptRoot "Makemedia.exe"
 $glue = Join-Path $PSScriptRoot "Glue.exe"
 
 $optimize = "Balance"
-# Separate by strings, not spaces, because Windows process argument passing is very innovative and needs it.
 $standardParameters = @("--h264", "--h265", "--optimize", $optimize, "--debug-overlay")
 
 # v8-MultiContent: different aspect ratios and languages in different periods.
